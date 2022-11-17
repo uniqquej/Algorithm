@@ -5,11 +5,15 @@ def solution(N, stages):
         count_no_clear = 0
         count_clear = 0
         for j in stages:
-            if j == i:
+            if i == j:
                 count_no_clear += 1
             if i <= j:
                 count_clear += 1
-        fail.append(count_no_clear / count_clear)
+            
+        if count_clear == 0:
+            fail.append(0)
+        else:
+            fail.append(count_no_clear / count_clear)
 
         answer = {}        
         for i in range(len(fail)):
