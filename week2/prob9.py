@@ -10,20 +10,13 @@ def solution(N, stages):
             if i <= j:
                 count_clear += 1
         fail.append(count_no_clear / count_clear)
-        answer = {}
 
+        answer = {}        
         for i in range(len(fail)):
             answer[i + 1] = fail[i]
 
-    new = sorted(answer.values(), reverse =True)
-    result = []
-    idx = 0
-    for key, value in answer.items():
-        if value == new[idx]:
-            idx += 1
-            result.append(key)
-    
-    print(result)
+    answer = sorted(answer.keys(), key=lambda key:answer[key], reverse=True)
+
     return answer
 
 
