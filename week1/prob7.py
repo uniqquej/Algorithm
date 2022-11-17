@@ -4,6 +4,7 @@ def solution(n, arr1, arr2):
     answer = []
 
     for i in range(n):
+        #a1 = str(bin(arr1[i])[2:]).zfill(n) ##이진수로 바꾸고 슬라이싱(0b 없애주기)
         a1 = str(format(arr1[i],'b')).zfill(n)
         b1 = str(format(arr2[i],'b')).zfill(n)
         row = ""
